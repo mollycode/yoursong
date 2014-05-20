@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="title">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="subtitle">
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="app_button" parent="android:Widget.Holo.Button">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@color/app_blue</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:layout_margin">5dp</item>
+    </style>
+    <style name="actionBar" parent="android:Widget.ActionBar">
+        <item name="android:background">@drawable/action_bar_background</item>
+        <item name="android:icon">@drawable/ic_launcher</item>
+    </style>
+    <style name="appTheme" parent="android:Theme.Holo">
+        <item name="android:actionBarStyle">@style/actionBar</item>
+    </style>
+</resources>

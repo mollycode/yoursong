@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:paddingLeft="20dp"
+              android:paddingRight="20dp"
+              android:gravity="center"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent">
+    <ImageView android:layout_width="350dp"
+               android:layout_height="350dp"
+               android:id="@+id/track_image"
+               android:layout_gravity="center_horizontal"
+               android:background="@color/dark_gray"
+               android:scaleType="fitXY"/>
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              style="@style/title"
+              android:id="@+id/track_title"/>
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              style="@style/subtitle"
+              android:id="@+id/track_artist"/>
+
+</LinearLayout>

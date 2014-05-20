@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="@string/welcome_title"
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:textColor="@color/app_blue"
+            />
+    <RadioGroup android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="50dp"
+                android:orientation="horizontal">
+        <RadioButton android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:id="@+id/title_param"
+                     android:checked="true"
+                     android:onClick="searchType"
+                     android:text="@string/title_only"/>
+        <RadioButton android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:id="@+id/all_param"
+                     android:onClick="searchType"
+                     android:text="@string/title_and_lyrics"/>
+    </RadioGroup>
+    <Button android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/app_blue"
+            android:textStyle="bold"
+            android:textSize="28sp"
+            android:textColor="@color/dark_gray"
+            android:padding="10dp"
+            android:layout_margin="50dp"
+            android:text="@string/select_person"
+            android:onClick="selectContact"/>
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="50dp"
+              android:layout_marginTop="50dp"
+              android:text="@string/alternate_search"/>
+    <EditText android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:imeOptions="actionSearch"
+              android:layout_marginBottom="50dp"
+              android:layout_marginLeft="50dp"
+              android:singleLine="true"
+              android:inputType="text"
+              android:layout_marginRight="50dp"
+              android:focusable="true"
+              android:id="@+id/name_query"/>
+
+</LinearLayout>

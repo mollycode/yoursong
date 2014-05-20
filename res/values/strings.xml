@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">yoursong</string>
+    <string name="app_name">Your Song</string>
+    <string name="look_up">Look Up</string>
+    <string name="title_only">Title only</string>
+    <string name="title_or_lyrics">Title or lyrics</string>
+    <string name="send_song">Send Your Song</string>
+    <string name="send_title">I found Your Song!</string>
+    <string name="send_message" formatted="false">Hey %s, I found Your Song: %s, by %s.</string>
+    <string name="send_link">Listen here:</string>
+    <string name="title_and_lyrics">Title and Lyrics</string>
+    <string name="welcome_title">Find your friend\'s songs</string>
+    <string name="select_person">Pick a contact</string>
+    <string name="alternate_search">Or searching directly here:</string>
+    <string name="share_dialog">Share via</string>
+    <string name="no_tracks">Sorry!\nNo tracks were found</string>
 </resources>

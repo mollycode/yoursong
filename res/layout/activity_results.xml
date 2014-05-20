@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:paddingTop="10dp"
+        >
+    <fragment android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:id="@+id/no_track_fragment"
+              android:name="com.android.yoursong.Fragments.NoTrackFragment"/>
+    <android.support.v4.view.ViewPager android:id="@+id/track_pager"
+                                       android:layout_width="match_parent"
+                                       android:layout_height="0dp"
+                                       android:layout_weight="1"/>
+    <Button android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/send_button"
+            style="@style/app_button"
+            android:onClick="shareSongOnClick"
+            android:text="@string/send_song"/>
+
+</LinearLayout>
+

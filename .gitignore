@@ -1,3 +1,7 @@
 .idea/*
 gen/*
 yoursong.iml
+libs/
+out/
+keystore.jks
+*.apk
