@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
+              android:background="@drawable/shadow"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+    <GridView android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:id="@+id/popular_contacts_grid"
+              android:columnWidth="200px"
+              android:clickable="false"
+              android:isScrollContainer="false"
+              android:stretchMode="columnWidth"
+              android:verticalSpacing="0dp"
+              android:numColumns="auto_fit"/>
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:background="@drawable/shadow"
+                  android:gravity="bottom"
+                  android:orientation="vertical">
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
             android:text="@string/welcome_title"
             android:gravity="center_horizontal"
             android:padding="10dp"
@@ -12,6 +28,12 @@
             android:textSize="24sp"
             android:textColor="@color/app_blue"
             />
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="@string/welcome_subtitle"
+                  android:gravity="center"
+                  android:padding="20dp"
+                  style="@style/subtitle"/>
     <RadioGroup android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -30,31 +52,33 @@
                      android:text="@string/title_and_lyrics"/>
     </RadioGroup>
     <Button android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/select_button"
             android:layout_gravity="center_horizontal"
             android:background="@color/app_blue"
             android:textStyle="bold"
-            android:textSize="28sp"
+            android:textSize="24sp"
             android:textColor="@color/dark_gray"
             android:padding="10dp"
-            android:layout_margin="50dp"
+            android:layout_margin="20dp"
             android:text="@string/select_person"
             android:onClick="selectContact"/>
     <TextView android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:layout_marginLeft="50dp"
-              android:layout_marginTop="50dp"
+              android:id="@+id/name_query_text"
+              android:layout_marginLeft="20dp"
+              android:layout_marginTop="20dp"
               android:text="@string/alternate_search"/>
     <EditText android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:imeOptions="actionSearch"
               android:layout_marginBottom="50dp"
-              android:layout_marginLeft="50dp"
+              android:layout_marginLeft="20dp"
               android:singleLine="true"
               android:inputType="text"
-              android:layout_marginRight="50dp"
+              android:layout_marginRight="20dp"
               android:focusable="true"
               android:id="@+id/name_query"/>
+    </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

@@ -6,9 +6,7 @@ import android.net.Uri;
 import android.provider.ContactsContract;
 import com.android.yoursong.Models.QueryContact;
 
-public class ContactDataHelper {
-
-    private final ContentResolver contentResolver;
+public class ContactQueryHelper extends ContactDatabaseHelper {
 
     private String[] contactProjection =  {
             ContactsContract.CommonDataKinds.StructuredName.GIVEN_NAME,
@@ -19,18 +17,18 @@ public class ContactDataHelper {
             ContactsContract.Data.MIMETYPE
     };
 
-    public ContactDataHelper(ContentResolver resolver) {
-        this.contentResolver = resolver;
+    public ContactQueryHelper(ContentResolver resolver) {
+        super(resolver);
     }
 
     public QueryContact getQueryContact(Uri dataUri) {
         QueryContact queryContact = new QueryContact();
 
-        Cursor contactCursor = getContacCursor(dataUri);
+        Cursor contactCursor = getContactCursor(dataUri);
 
         while (contactCursor.moveToNext()) {
 
-            Cursor dataCursor = getDataCursor(contactCursor);
+            Cursor dataCursor = getDataCursor(contactCursor, contactProjection);
             while (dataCursor.moveToNext()) {
                 setData(dataCursor, queryContact);
             }
@@ -40,23 +38,6 @@ public class ContactDataHelper {
 
         return queryContact;
     }
-
-    private Cursor getContacCursor(Uri dataUri) {
-        Uri contactUri = ContactsContract.Contacts.lookupContact(contentResolver, dataUri);
-        Cursor contactCursor = contentResolver.query(contactUri, null, null, null, null);
-
-        return contactCursor;
-    }
-
-    private Cursor getDataCursor(Cursor contactCursor) {
-        String id = contactCursor.getString(contactCursor.getColumnIndex(ContactsContract.Contacts._ID));
-        String nameWhere = ContactsContract.Data.CONTACT_ID + " = " + id;
-
-        Cursor dataCursor = contentResolver.query(ContactsContract.Data.CONTENT_URI, contactProjection, nameWhere, null, null);
-
-        return dataCursor;
-    }
-
 
     private void setData(Cursor cursor, QueryContact queryContact) {
         String mimetype = cursor.getString(cursor.getColumnIndex(ContactsContract.Data.MIMETYPE));

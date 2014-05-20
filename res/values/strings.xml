@@ -9,9 +9,10 @@
     <string name="send_message" formatted="false">Hey %s, I found Your Song: %s, by %s.</string>
     <string name="send_link">Listen here:</string>
     <string name="title_and_lyrics">Title and Lyrics</string>
-    <string name="welcome_title">Find your friend\'s songs</string>
+    <string name="welcome_title">Find Your Song</string>
+    <string name="welcome_subtitle">discover whose name is in what song</string>
     <string name="select_person">Pick a contact</string>
-    <string name="alternate_search">Or searching directly here:</string>
+    <string name="alternate_search">Or search any name here:</string>
     <string name="share_dialog">Share via</string>
     <string name="no_tracks">Sorry!\nNo tracks were found</string>
 </resources>

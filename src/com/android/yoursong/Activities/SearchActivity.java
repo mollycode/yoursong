@@ -8,9 +8,11 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
+import android.widget.GridView;
 import android.widget.RadioButton;
 import android.widget.TextView;
-import com.android.yoursong.Helpers.ContactDataHelper;
+import com.android.yoursong.Adapters.ContactImageAdapter;
+import com.android.yoursong.Helpers.ContactQueryHelper;
 import com.android.yoursong.Models.QueryContact;
 import com.android.yoursong.R;
 
@@ -21,7 +23,7 @@ public class SearchActivity extends Activity {
     public static final String EXTRA_QUERY_PHONE = "com.android.yoursong.extra.query_phone";
     public static final String EXTRA_QUERY_EMAIL = "com.android.yoursong.extra.query_email";
 
-    private boolean titleOnly = false;
+    private boolean titleOnly = true;
 
     private static final int PICK_CONTACT = 1;
 
@@ -30,15 +32,20 @@ public class SearchActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_search);
+        getActionBar().hide();
 
-        ((EditText)findViewById(R.id.name_query)).setOnEditorActionListener(actionListener);
+        ((EditText) findViewById(R.id.name_query)).setOnEditorActionListener(actionListener);
+        ContactImageAdapter contactImageAdapter = new ContactImageAdapter();
+        GridView gridView = (GridView) findViewById(R.id.popular_contacts_grid);
+        gridView.setAdapter(contactImageAdapter);
+        contactImageAdapter.loadContactImages(getContentResolver(), gridView);
     }
 
     private TextView.OnEditorActionListener actionListener = new TextView.OnEditorActionListener() {
         @Override
         public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                String query = String.valueOf(((EditText)findViewById(R.id.name_query)).getText());
+                String query = String.valueOf(((EditText) findViewById(R.id.name_query)).getText());
                 lookupName(query);
                 return true;
             }
@@ -56,9 +63,9 @@ public class SearchActivity extends Activity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == PICK_CONTACT && data != null) {
-            ContactDataHelper contactDataHelper = new ContactDataHelper(getContentResolver());
-                QueryContact queryContact = contactDataHelper.getQueryContact(data.getData());
-                lookupName(queryContact);
+            ContactQueryHelper contactQueryHelper = new ContactQueryHelper(getContentResolver());
+            QueryContact queryContact = contactQueryHelper.getQueryContact(data.getData());
+            lookupName(queryContact);
 
         }
     }

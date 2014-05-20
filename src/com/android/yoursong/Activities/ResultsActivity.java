@@ -76,6 +76,7 @@ public class ResultsActivity extends Activity {
         Intent intentData = getIntent();
 
         this.query = intentData.getStringExtra(EXTRA_QUERY);
+
         this.titleOnly = intentData.getBooleanExtra(EXTRA_QUERY_TYPE, false);
         if (intentData.hasExtra(EXTRA_QUERY_EMAIL)) {
             this.emailAddress = intentData.getStringExtra(EXTRA_QUERY_EMAIL);
