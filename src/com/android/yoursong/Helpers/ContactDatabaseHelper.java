@@ -14,8 +14,8 @@ public class ContactDatabaseHelper {
     }
 
     protected Cursor getStrequentCursor() {
-       Cursor strequentCursor = contentResolver.query(ContactsContract.Contacts.CONTENT_STREQUENT_URI, null, null, null, null);
-       return strequentCursor;
+        Cursor strequentCursor = contentResolver.query(ContactsContract.Contacts.CONTENT_STREQUENT_URI, null, null, null, null);
+        return strequentCursor;
     }
 
     protected Cursor getContactCursor(Uri dataUri) {
@@ -30,6 +30,7 @@ public class ContactDatabaseHelper {
         String nameWhere = ContactsContract.Data.CONTACT_ID + " = " + id;
 
         Cursor dataCursor = contentResolver.query(ContactsContract.Data.CONTENT_URI, contactProjection, nameWhere, null, null);
+
 
         return dataCursor;
     }

@@ -16,7 +16,7 @@ import java.util.List;
 
 public class ContactImageAdapter extends BaseAdapter {
 
-   List<Uri> contactImages = new ArrayList<Uri>();
+    List<Uri> contactImages = new ArrayList<Uri>();
 
     public void loadContactImages(ContentResolver contentResolver, GridView gridView) {
         ImagesQueryHelper imagesQueryHelper = new ImagesQueryHelper(contentResolver);

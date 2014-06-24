@@ -17,7 +17,9 @@ public class Track {
         return artist_name;
     }
 
-    public boolean hasSpotifyLink() { return !track_spotify_id.isEmpty(); }
+    public boolean hasSpotifyLink() {
+        return !track_spotify_id.isEmpty();
+    }
 
     public String getSpotifyLink() {
         return "http://open.spotify.com/track/" + track_spotify_id;

@@ -5,3 +5,4 @@ libs/
 out/
 keystore.jks
 *.apk
+*.DS_Store

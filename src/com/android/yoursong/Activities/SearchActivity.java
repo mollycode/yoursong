@@ -7,10 +7,7 @@ import android.provider.ContactsContract;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
-import android.widget.EditText;
-import android.widget.GridView;
-import android.widget.RadioButton;
-import android.widget.TextView;
+import android.widget.*;
 import com.android.yoursong.Adapters.ContactImageAdapter;
 import com.android.yoursong.Helpers.ContactQueryHelper;
 import com.android.yoursong.Models.QueryContact;
@@ -71,6 +68,10 @@ public class SearchActivity extends Activity {
     }
 
     private void lookupName(String query) {
+        if (query.isEmpty()) {
+            Toast.makeText(this, R.string.empty_query, Toast.LENGTH_SHORT).show();
+            return;
+        }
         Intent intent = new Intent(this, ResultsActivity.class);
         intent.putExtra(EXTRA_QUERY_TYPE, titleOnly);
         intent.putExtra(EXTRA_QUERY, query);
@@ -80,6 +81,10 @@ public class SearchActivity extends Activity {
     private void lookupName(QueryContact queryContact) {
         Intent intent = new Intent(this, ResultsActivity.class);
         intent.putExtra(EXTRA_QUERY_TYPE, titleOnly);
+        if (queryContact.getQueryName() == null) {
+            Toast.makeText(this, R.string.no_name, Toast.LENGTH_SHORT).show();
+            return;
+        }
         intent.putExtra(EXTRA_QUERY, queryContact.getQueryName());
         intent.putExtra(EXTRA_QUERY_EMAIL, queryContact.getEmailAddress());
         intent.putExtra(EXTRA_QUERY_PHONE, queryContact.getPhoneNumber());

@@ -7,7 +7,7 @@ import com.android.volley.Response;
 import java.util.HashMap;
 import java.util.Map;
 
-public class YourSongRequest extends GsonRequest<QueryResponse>{
+public class YourSongRequest extends GsonRequest<QueryResponse> {
 
     private static final String API_URL = "http://api.musixmatch.com/ws/1.1/track.search";
     private static final String API_KEY_PARAM = "apikey";

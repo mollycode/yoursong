@@ -8,7 +8,7 @@ import com.android.yoursong.Models.QueryContact;
 
 public class ContactQueryHelper extends ContactDatabaseHelper {
 
-    private String[] contactProjection =  {
+    private String[] contactProjection = {
             ContactsContract.CommonDataKinds.StructuredName.GIVEN_NAME,
             ContactsContract.CommonDataKinds.Phone.NUMBER,
             ContactsContract.CommonDataKinds.Phone.IS_PRIMARY,

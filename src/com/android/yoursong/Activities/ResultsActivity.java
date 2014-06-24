@@ -47,7 +47,7 @@ public class ResultsActivity extends Activity {
         setActionBar();
 
         loadViewPager();
-    };
+    }
 
     @Override
     protected void onResume() {
@@ -63,7 +63,7 @@ public class ResultsActivity extends Activity {
 
     @Override
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
-        switch(item.getItemId()) {
+        switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
                 return true;
@@ -119,14 +119,16 @@ public class ResultsActivity extends Activity {
 
     private Intent getSmsIntent() {
         Uri smsUri = Uri.fromParts("sms", phoneNumber, null);
-        Intent smsIntent= new Intent(Intent.ACTION_VIEW, smsUri);
+        Intent smsIntent = new Intent(Intent.ACTION_VIEW, smsUri);
         smsIntent.putExtra("sms_body", getFormattedMessage());
         return smsIntent;
     }
 
     private Intent[] getExtraSmsIntents() {
         PackageManager packageManager = getPackageManager();
-        if (packageManager == null) { return null; };
+        if (packageManager == null) {
+            return null;
+        }
 
         Intent baseIntent = getSmsIntent();
         List<ResolveInfo> resolveInfoList = packageManager.queryIntentActivities(baseIntent, PackageManager.MATCH_DEFAULT_ONLY);
@@ -146,11 +148,11 @@ public class ResultsActivity extends Activity {
     }
 
     private String getFormattedMessage() {
-        int position = ((ViewPager)findViewById(R.id.track_pager)).getCurrentItem();
+        int position = ((ViewPager) findViewById(R.id.track_pager)).getCurrentItem();
         Track track = trackAdapter.getTrack(position);
         String message = String.format(getString(R.string.send_message), query, track.getTrackName(), track.getArtist());
         if (track.hasSpotifyLink()) {
-            message += '\n' + getString(R.string.send_link) +  " " + track.getSpotifyLink();
+            message += '\n' + getString(R.string.send_link) + " " + track.getSpotifyLink();
         }
         return message;
     }
