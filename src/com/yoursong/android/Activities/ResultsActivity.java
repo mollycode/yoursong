@@ -1,4 +1,4 @@
-package com.android.yoursong.Activities;
+package com.yoursong.android.Activities;
 
 import android.app.Activity;
 import android.content.*;
@@ -10,14 +10,14 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.*;
 
-import com.android.yoursong.Adapters.TrackAdapter;
-import com.android.yoursong.Models.*;
-import com.android.yoursong.R;
+import com.yoursong.android.Adapters.TrackAdapter;
+import com.yoursong.android.Models.*;
+import com.yoursong.android.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.android.yoursong.Activities.SearchActivity.*;
+import static com.yoursong.android.Activities.SearchActivity.*;
 
 
 public class ResultsActivity extends Activity {
@@ -39,7 +39,7 @@ public class ResultsActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.android.yoursong.R.layout.activity_results);
+        setContentView(R.layout.activity_results);
         findViewById(R.id.no_track_fragment).setVisibility(View.GONE);
 
         parseIntentData();

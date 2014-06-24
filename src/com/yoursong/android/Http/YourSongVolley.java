@@ -1,9 +1,9 @@
-package com.android.yoursong.Http;
+package com.yoursong.android.Http;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
-import com.android.yoursong.YourSongApplication;
+import com.yoursong.android.YourSongApplication;
 
 public class YourSongVolley {
 

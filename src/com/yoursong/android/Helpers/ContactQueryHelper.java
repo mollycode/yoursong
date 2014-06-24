@@ -1,10 +1,11 @@
-package com.android.yoursong.Helpers;
+package com.yoursong.android.Helpers;
 
 import android.content.ContentResolver;
 import android.database.Cursor;
 import android.net.Uri;
 import android.provider.ContactsContract;
-import com.android.yoursong.Models.QueryContact;
+import com.yoursong.android.Models.QueryContact;
+import com.yoursong.android.Helpers.ContactDatabaseHelper;
 
 public class ContactQueryHelper extends ContactDatabaseHelper {
 

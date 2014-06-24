@@ -1,11 +1,11 @@
-package com.android.yoursong.Fragments;
+package com.yoursong.android.Fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.android.yoursong.R;
+import com.yoursong.android.R;
 
 /**
  * Created by molly on 5/19/14.

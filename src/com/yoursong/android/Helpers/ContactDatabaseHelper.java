@@ -1,4 +1,4 @@
-package com.android.yoursong.Helpers;
+package com.yoursong.android.Helpers;
 
 import android.content.ContentResolver;
 import android.database.Cursor;

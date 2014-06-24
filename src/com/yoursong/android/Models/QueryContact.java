@@ -1,4 +1,4 @@
-package com.android.yoursong.Models;
+package com.yoursong.android.Models;
 
 public class QueryContact {
 

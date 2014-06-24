@@ -1,4 +1,4 @@
-package com.android.yoursong.Adapters;
+package com.yoursong.android.Adapters;
 
 import android.content.ContentResolver;
 import android.net.Uri;
@@ -7,8 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-import com.android.yoursong.Helpers.ImagesQueryHelper;
-import com.android.yoursong.R;
+import com.yoursong.android.Helpers.ImagesQueryHelper;
+import com.yoursong.android.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

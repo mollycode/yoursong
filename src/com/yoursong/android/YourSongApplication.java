@@ -1,4 +1,4 @@
-package com.android.yoursong;
+package com.yoursong.android;
 
 import android.app.Application;
 

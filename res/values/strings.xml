@@ -18,4 +18,5 @@
     <string name="empty_query">Oops! Search can\'t be empty</string>
     <string name="no_name">Contact doesn\'t have a name</string>
     <string name="powered_by">Powered by</string>
+    <string name="listen">Listen</string>
 </resources>

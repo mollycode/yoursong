@@ -1,4 +1,4 @@
-package com.android.yoursong.Models;
+package com.yoursong.android.Models;
 
 public class Track {
     String track_name;
@@ -23,6 +23,10 @@ public class Track {
 
     public String getSpotifyLink() {
         return "http://open.spotify.com/track/" + track_spotify_id;
+    }
+
+    public String getSpotifyId() {
+        return track_spotify_id;
     }
 
     public String getBestAlbumArt() {

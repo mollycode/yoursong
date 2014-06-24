@@ -1,8 +1,8 @@
-package com.android.yoursong.Utils;
+package com.yoursong.android.Utils;
 
 public class Log {
 
-    private static final String LOG_KEY = "com.android.yoursong";
+    private static final String LOG_KEY = "com.yoursong.android";
 
     public static void d(String message) {
         android.util.Log.d(LOG_KEY, message);

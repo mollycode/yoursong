@@ -1,4 +1,4 @@
-package com.android.yoursong.Activities;
+package com.yoursong.android.Activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,17 +8,17 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.*;
-import com.android.yoursong.Adapters.ContactImageAdapter;
-import com.android.yoursong.Helpers.ContactQueryHelper;
-import com.android.yoursong.Models.QueryContact;
-import com.android.yoursong.R;
+import com.yoursong.android.Adapters.ContactImageAdapter;
+import com.yoursong.android.Helpers.ContactQueryHelper;
+import com.yoursong.android.Models.QueryContact;
+import com.yoursong.android.R;
 
 public class SearchActivity extends Activity {
 
-    public static final String EXTRA_QUERY_TYPE = "com.android.yoursong.extra.query_type";
-    public static final String EXTRA_QUERY = "com.android.yoursong.extra.query";
-    public static final String EXTRA_QUERY_PHONE = "com.android.yoursong.extra.query_phone";
-    public static final String EXTRA_QUERY_EMAIL = "com.android.yoursong.extra.query_email";
+    public static final String EXTRA_QUERY_TYPE = "com.yoursong.android.extra.query_type";
+    public static final String EXTRA_QUERY = "com.yoursong.android.extra.query";
+    public static final String EXTRA_QUERY_PHONE = "com.yoursong.android.extra.query_phone";
+    public static final String EXTRA_QUERY_EMAIL = "com.yoursong.android.extra.query_email";
 
     private boolean titleOnly = true;
 

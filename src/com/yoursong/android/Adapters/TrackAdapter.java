@@ -1,4 +1,4 @@
-package com.android.yoursong.Adapters;
+package com.yoursong.android.Adapters;
 
 
 import android.app.Fragment;
@@ -7,13 +7,13 @@ import android.content.Intent;
 import android.support.v13.app.FragmentPagerAdapter;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.yoursong.Fragments.TrackFragment;
-import com.android.yoursong.Http.YourSongRequest;
-import com.android.yoursong.Http.YourSongVolley;
-import com.android.yoursong.Http.QueryResponse;
-import com.android.yoursong.Models.Track;
-import com.android.yoursong.Utils.Log;
-import com.android.yoursong.YourSongApplication;
+import com.yoursong.android.Http.YourSongRequest;
+import com.yoursong.android.Http.YourSongVolley;
+import com.yoursong.android.Http.QueryResponse;
+import com.yoursong.android.Fragments.TrackFragment;
+import com.yoursong.android.Models.Track;
+import com.yoursong.android.Utils.Log;
+import com.yoursong.android.YourSongApplication;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,7 +80,9 @@ public class TrackAdapter extends FragmentPagerAdapter {
         final Response.ErrorListener errorListener = new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.d(error.getMessage());
+                if (error != null) {
+                    Log.d(error.getMessage());
+                }
             }
         };
 
