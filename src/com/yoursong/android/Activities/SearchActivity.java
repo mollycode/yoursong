@@ -8,6 +8,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.*;
+import com.crashlytics.android.Crashlytics;
 import com.yoursong.android.Adapters.ContactImageAdapter;
 import com.yoursong.android.Helpers.ContactQueryHelper;
 import com.yoursong.android.Models.QueryContact;
@@ -27,6 +28,7 @@ public class SearchActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Crashlytics.start(this);
 
         setContentView(R.layout.activity_search);
         getActionBar().hide();
